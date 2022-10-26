@@ -110,7 +110,7 @@ class _CountrySearchListWidgetState extends State<CountrySearchListWidget> {
               //     alignment: AlignmentDirectional.centerStart,
               //     child: Text(
               //       '${country.dialCode ?? ''}',
-              //       textDirection: TextDirection.ltr,
+              //       textDirection: Directionality.of(context),
               //       textAlign: TextAlign.start,
               //     ),
               //   ),
@@ -162,7 +162,7 @@ class DirectionalCountryListTile extends StatelessWidget {
         alignment: AlignmentDirectional.centerStart,
         child: Text(
           '${country.dialCode ?? ''}',
-          textDirection: TextDirection.ltr,
+          textDirection: Directionality.of(context),
           textAlign: TextAlign.start,
         ),
       ),
