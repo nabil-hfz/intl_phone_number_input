@@ -43,7 +43,7 @@ class Item extends StatelessWidget {
           SizedBox(width: 12.0),
           Text(
             '$dialCode',
-            textDirection: TextDirection.ltr,
+            textDirection: Directionality.of(context),
             style: textStyle,
           ),
         ],
