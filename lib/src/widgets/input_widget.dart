@@ -42,6 +42,7 @@ class InternationalPhoneNumberInput extends StatefulWidget {
   final ValueChanged<bool>? onInputValidated;
 
   final VoidCallback? onSubmit;
+  final TextDirection? textDirection;
   final ValueChanged<String>? onFieldSubmitted;
   final String? Function(String?)? validator;
   final ValueChanged<PhoneNumber>? onSaved;
@@ -93,6 +94,7 @@ class InternationalPhoneNumberInput extends StatefulWidget {
       this.onInputValidated,
       this.onSubmit,
       this.onFieldSubmitted,
+      this.textDirection,
       this.validator,
       this.onSaved,
       this.fieldKey,
@@ -421,7 +423,7 @@ class _InputWidgetView
           Flexible(
             child: TextFormField(
               key: widget.fieldKey ?? Key(TestHelper.TextInputKeyValue),
-              textDirection: Directionality.of(context),
+              textDirection: widget.textDirection,
               controller: state.controller,
               cursorColor: widget.cursorColor,
               focusNode: widget.focusNode,
