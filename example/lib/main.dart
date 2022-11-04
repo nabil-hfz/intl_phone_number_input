@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 
 void main() => runApp(MyApp());
@@ -15,12 +16,18 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Directionality(
-        textDirection: TextDirection.rtl,
-        child: Scaffold(
-          appBar: AppBar(title: Text('Demo')),
-          body: MyHomePage(),
-        ),
+      localizationsDelegates: [
+        GlobalCupertinoLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+      ],
+      supportedLocales: [
+        Locale('ar', 'AE'),
+      ],
+      locale: Locale('ar', 'AE'),
+      home: Scaffold(
+        appBar: AppBar(title: Text('Demo')),
+        body: MyHomePage(),
       ),
     );
   }
@@ -57,6 +64,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 selectorType: PhoneInputSelectorType.BOTTOM_SHEET,
               ),
               ignoreBlank: false,
+              textDirection: TextDirection.rtl,
               autoValidateMode: AutovalidateMode.disabled,
               selectorTextStyle: TextStyle(color: Colors.black),
               initialValue: number,

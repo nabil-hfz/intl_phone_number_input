@@ -71,6 +71,7 @@ class InternationalPhoneNumberInput extends StatefulWidget {
   final bool countrySelectorScrollControlled;
 
   final String? locale;
+  final TextDirection? textDirection;
 
   final TextStyle? textStyle;
   final TextStyle? selectorTextStyle;
