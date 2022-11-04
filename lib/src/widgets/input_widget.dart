@@ -42,7 +42,6 @@ class InternationalPhoneNumberInput extends StatefulWidget {
   final ValueChanged<bool>? onInputValidated;
 
   final VoidCallback? onSubmit;
-  final TextDirection? textDirection;
   final ValueChanged<String>? onFieldSubmitted;
   final String? Function(String?)? validator;
   final ValueChanged<PhoneNumber>? onSaved;
